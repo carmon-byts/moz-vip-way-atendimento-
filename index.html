@@ -1,3 +1,4 @@
+cat > index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -7,57 +8,125 @@
     body {
       margin: 0;
       padding: 0;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #d0eaff, #ffffff);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       text-align: center;
+      animation: fadeIn 1.5s ease-in;
     }
-
-    .logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 20px;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
+    img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
     h1 {
-      font-size: 2.5em;
       color: #0088cc;
-      margin-bottom: 10px;
+      font-size: 3em;
+      margin: 10px 0;
     }
-
     p {
-      font-size: 1.3em;
-      color: #333;
+      font-size: 1.5em;
       margin-bottom: 30px;
+      color: #444;
     }
-
     .button {
-      padding: 12px 24px;
+      display: inline-block;
+      padding: 15px 30px;
       background-color: #0088cc;
       color: white;
+      font-size: 1.2em;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 1em;
-      transition: background 0.3s;
+      border-radius: 10px;
+      transition: background 0.3s ease;
     }
-
     .button:hover {
       background-color: #005f8c;
     }
   </style>
 </head>
 <body>
-
-  <img src="logo.jpg" alt="Logo MOZ VIP WAY" class="logo">
-
+  <img src="logo.jpg" alt="Logo MOZ VIP WAY">
   <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
-  <p>📡 BEM-VINDO AO SITE DE VENDA DE ARQUIVOS PARA VPN'S 📡</p>
-
+  <p>📡 BEM-VINDO AO SITE DE VENDA DE ARQUIVOS PARA VPN's 📡</p>
   <a href="precos.html" class="button">Ver Tabela de Preços</a>
-
 </body>
 </html>
+EOF
+
+
+cat > precos.html << 'EOF'
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabela de Preços</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: red;
+      font-size: 2em;
+    }
+    ul {
+      font-size: 1.3em;
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input {
+      width: 300px;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #25D366;
+      color: white;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>‼️ PAGAMENTO FÁCIL E RÁPIDO ‼️</h1>
+  <p>1. 📲 CÓPIA O MEU NÚMERO <strong>852361783</strong><br>
+     2. ✅ CONFIRMA O MEU NOME ANTES DE ENVIAR<br>
+     3. 📸 FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E ENVIE JUNTO COM SEUS DADOS</p>
+
+  <ul>
+    <li>💰 PREÇOS: 15 MT CADA ARQUIVO</li>
+    <li>HTTP CUSTOM</li>
+    <li>HTTP INJECTOR</li>
+    <li>HTTP INJECTOR LITE</li>
+    <li>BINK TÚNEL</li>
+    <li>WYR VPN</li>
+    <li>AIO TÚNEL</li>
+    <li>TLS TÚNEL</li>
+    <li>ESET VPN</li>
+  </ul>
+
+  <form>
+    <input type="text" placeholder="Seu Nome" required><br>
+    <input type="text" placeholder="Número com WhatsApp" required><br>
+    <a class="whatsapp-button" href="https://wa.me/258852361783">Enviar via WhatsApp</a>
+  </form>
+</body>
+</html>
+EOF
