@@ -2,277 +2,163 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
+  <title>🇲🇿 MOZ VIP WAY 🇲🇿 - Página Inicial</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
     }
-    .welcome-screen {
-      background-image: url('bg-mozvip.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      animation: fadeIn 2s ease-in-out;
-      position: relative;
-    }
-    .welcome-screen h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      margin-top: -40px;
-      color: #fff;
-      text-shadow: 1px 1px 4px #000;
-    }
-    .welcome-screen h2 {
-      font-size: 1.8rem;
-      margin: 0 20px 30px;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .welcome-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .welcome-buttons button {
-      padding: 25px 50px;
-      font-size: 24px;
-      background-color: #007bff; /* Alterado para azul */
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .online-counter {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background-color: #222;
-      color: #0f0;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 0 10px #0f0;
-    }
     .container {
-      display: none;
       max-width: 100%;
       height: 100vh;
       margin: 0;
       padding: 20px;
       background: #fff;
-      border-radius: 0;
-      box-shadow: none;
       text-align: center;
       overflow-y: auto;
     }
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #007bff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
     .info-mpesa {
-      font-size: 16px;
+      font-size: 24px;
       font-weight: bold;
       margin: 20px 0;
       color: red;
     }
+    .info-mpesa strong {
+      color: green;
+    }
+    button.tutorial-button {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
     table {
       margin: 20px auto;
       border-collapse: collapse;
-      width: 100%;
+      width: 80%;
+      font-size: 1.5rem;
     }
     th, td {
       border: 1px solid #ddd;
-      padding: 10px;
+      padding: 15px;
     }
     th {
       background-color: #f0f0f0;
     }
-    input, textarea, select {
-      width: 90%;
+    .table-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .comment-section {
+      margin-top: 40px;
+    }
+    .comment-section h3 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+    .comment-section textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 1.2rem;
+      resize: none;
       padding: 10px;
-      margin: 10px 0;
+      margin-top: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    input[type=file]::file-selector-button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button.submit {
-      background-color: #0066cc;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .message {
-      margin-top: 20px;
-      font-weight: bold;
-      color: green;
-    }
-    .comentarios {
-      margin-top: 30px;
-      text-align: left;
-    }
-    .comentarios textarea {
-      width: 100%;
-      height: 100px;
-      resize: none;
-    }
-    .comentarios button {
-      margin-top: 10px;
+    .comment-section button {
       background-color: #00b894;
       color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 1.5rem;
       cursor: pointer;
+      margin-top: 10px;
+      border: none;
     }
-    .links-uteis {
+    .price-list {
+      font-size: 1.8rem;
+      margin-top: 20px;
+    }
+    .price-list strong {
+      color: #007bff;
+    }
+    .footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
       margin-top: 40px;
     }
-    .grupo-button, .config-button, .telegram-button {
-      background-color: #007bff;
-      color: white;
+    .footer a {
+      font-size: 2rem;
+      color: #000;
+      text-decoration: none;
+      margin: 10px;
+    }
+    .footer a:hover {
+      color: #007bff;
+    }
+    /* Alteração solicitada */
+    .tutorial-button {
+      font-size: 2rem;
+      color: #ff6347; /* Cor laranja chamativa */
       font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin: 10px 5px;
-      cursor: pointer;
-      border: none;
     }
   </style>
 </head>
 <body>
-  <div class="welcome-screen" id="welcome">
-    <div class="online-counter">
-      <span>🟢</span>
-      <span id="online-number">38</span> online
-    </div>
-
-    <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
-    <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
-    
-    <div class="welcome-buttons">
-      <button onclick="mostrarFormulario()">Ir para Atendimento</button>
-      <button onclick="window.location.href='comentarios.html'">Comentários</button>
-    </div>
-
-    <div class="links-uteis">
-      <h3>Links Úteis:</h3>
-      <button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">Grupo de WhatsApp</button>
-      <button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">Configuração Privada</button>
-      <button class="telegram-button" onclick="window.open('https://t.me/MOZVIPWEY', '_blank')">Grupo de Telegram</button>
-      <p style="margin-top: 20px; font-weight: bold; color: red;">⚠️ A sua segurança é a minha prioridade ⚠️</p>
-    </div>
-  </div>
-
-  <div class="container" id="pagamento">
+  <div class="container">
     <h2>‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
     <div class="info-mpesa">
       +258 852361783<br>
-      _CONFIRME O NOME ANTES DE ENVIAR_<br>
+      <strong>CONFIRME O NOME ANTES DE ENVIAR</strong><br>
       NOME: <strong>CARMÓNIO</strong> ❗<br>
-      VALOR: <strong>15 MT</strong>
+      VALOR: <strong>15 MT</strong> 💸
     </div>
 
     <button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
-      COMO FAZER O PAGAMENTO - PASSO A PASSO
+      Como Fazer o Pagamento - Passo a Passo 📲
     </button>
 
-    <ul style="text-align: left;">
-      <li><strong>Passo 1:</strong> Faz o pagamento para o número <strong>+258852361783</strong></li>
-      <li><strong>Passo 2:</strong> Confirma que o nome é <strong>CARMÓNIO</strong></li>
-      <li><strong>Passo 3:</strong> Faz screenshot da mensagem de envio e envia!</li>
-    </ul>
-
-    <h3>Tabela de Preços</h3>
+    <h3 class="table-title">Tabela de Preços 📊</h3>
     <table>
       <tr><th>VPN</th><th>Preço</th></tr>
-      <tr><td>Http Custom</td><td>15 MT</td></tr>
-      <tr><td>Http Injector Lite</td><td>15 MT</td></tr>
-      <tr><td>Http Injector</td><td>15 MT</td></tr>
-      <tr><td>Linklayer VPN</td><td>15 MT</td></tr>
-      <tr><td>Wry VPN</td><td>15 MT</td></tr>
-      <tr><td>Bink Tunnel VPN</td><td>15 MT</td></tr>
-      <tr><td>Aio Tunnel VPN</td><td>15 MT</td></tr>
+      <tr><td>Http Custom</td><td>15 MT 💰</td></tr>
+      <tr><td>Http Injector Lite</td><td>15 MT 💰</td></tr>
+      <tr><td>Http Injector</td><td>15 MT 💰</td></tr>
+      <tr><td>Linklayer VPN</td><td>15 MT 💰</td></tr>
+      <tr><td>Wry VPN</td><td>15 MT 💰</td></tr>
+      <tr><td>Bink Tunnel VPN</td><td>15 MT 💰</td></tr>
+      <tr><td>Aio Tunnel VPN</td><td>15 MT 💰</td></tr>
     </table>
 
-    <form id="paymentForm">
-      <select id="vpn" required>
-        <option value="">Escolha sua VPN</option>
-        <option value="Http Custom">Http Custom</option>
-        <option value="Http Injector Lite">Http Injector Lite</option>
-        <option value="Http Injector">Http Injector</option>
-        <option value="Linklayer VPN">Linklayer VPN</option>
-        <option value="Wry VPN">Wry VPN</option>
-        <option value="Bink Tunnel VPN">Bink Tunnel VPN</option>
-        <option value="Aio Tunnel VPN">Aio Tunnel VPN</option>
-      </select>
-
-      <input type="text" id="name" placeholder="Seu nome" required>
-      <input type="text" id="phone" placeholder="Seu número de WhatsApp" required>
-      <textarea id="feedback" placeholder="Sua opinião (opcional)"></textarea>
-      <input type="file" id="screenshot" accept="image/*" title="ENVIAR FOTO DE CONFIRMAÇÃO DO PAGAMENTO"><br>
-
-      <button type="submit" class="submit">Solicitar o seu arquivo no WhatsApp</button>
-    </form>
-
-    <div class="message" id="statusMessage"></div>
-
-    <div class="comentarios">
-      <h3>Deixe um comentário:</h3>
-      <textarea placeholder="Escreva aqui seu comentário..."></textarea>
-      <button onclick="alert('Comentário enviado! Obrigado!')">Enviar Comentário</button>
+    <div class="comment-section">
+      <h3>Deixe um comentário 💬:</h3>
+      <textarea placeholder="Escreva seu comentário aqui..."></textarea>
+      <button onclick="alert('Comentário enviado! Obrigado!')">Enviar Comentário ✍️</button>
     </div>
+
   </div>
 
-  <script>
-    function mostrarFormulario() {
-      document.getElementById('welcome').style.display = 'none';
-      document.getElementById('pagamento').style.display = 'block';
-    }
-
-    document.getElementById("paymentForm").onsubmit = function(event) {
-      event.preventDefault();
-
-      let nome = document.getElementById("name").value;
-      let vpn = document.getElementById("vpn").value;
-      let phone = document.getElementById("phone").value;
-      let feedback = document.getElementById("feedback").value;
-
-      let texto = `Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
-      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
-
-      document.getElementById("statusMessage").innerText = "A abrir WhatsApp...";
-
-      setTimeout(() => {
-        window.open(linkWhatsApp, "_blank");
-      }, 1500);
-    };
-
-    function atualizarNumeroOnline() {
-      const numero = Math.floor(Math.random() * (47 - 24 + 1)) + 24;
-      document.getElementById("online-number").textContent = numero;
-    }
-    setInterval(atualizarNumeroOnline, 4000);
-    atualizarNumeroOnline();
-  </script>
+  <div class="footer">
+    <a href="https://whatsapp.com/link" target="_blank">Grupo de WhatsApp</a>
+    <a href="https://telegram.com/link" target="_blank">Grupo de Telegram</a>
+    <a href="https://configuracaoprivada.com" target="_blank">Configuração Privada</a>
+    <p><strong>⚠️ A sua segurança é a minha prioridade ⚠️</strong></p>
+  </div>
 </body>
 </html>
