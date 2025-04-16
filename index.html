@@ -1,155 +1,232 @@
-	<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>🇲🇿 TABELA DE PREÇOS - MOZ VIP WAY 🇲🇿</title>
+  <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #111, #333);
-      color: white;
-      text-align: center;
-    }
+      background-color: #f4f4f4;
+    }.welcome-screen {
+  background-image: url('bg-mozvip.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 2s ease-in-out;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      margin: 20px 0;
-      color: #FF0000;
-      text-shadow: 2px 2px 5px black;
-    }
+.welcome-screen h1 {
+  font-size: 2rem;
+  margin: 0 20px 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  border-radius: 10px;
+}
 
-    .info {
-      font-size: 1.2rem;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #222;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
-      line-height: 1.8;
-    }
+.welcome-screen button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #00cc66;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-    .info strong {
-      color: #00ff99;
-    }
+.container {
+  display: none;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
 
-    .tabela-precos {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 600px;
-    }
+.info-mpesa {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: red;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      color: white;
-      font-size: 1.1rem;
-    }
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-    th, td {
-      padding: 12px;
-      border: 1px solid #444;
-    }
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
 
-    th {
-      background-color: #00cc66;
-    }
+th {
+  background-color: #f0f0f0;
+}
 
-    .formulario {
-      background-color: #1c1c1c;
-      padding: 20px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 10px;
-    }
+input, textarea, select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-    .formulario input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: none;
-      font-size: 1rem;
-    }
+input[type=file]::file-selector-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .btn-whatsapp {
-      background-color: #25D366;
-      color: white;
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+button.submit {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    .btn-whatsapp:hover {
-      background-color: #1ebc5a;
-    }
+.message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+.tutorial-button, .grupo-button, .config-button, .telegram-button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.comentarios {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.comentarios textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+.comentarios button {
+  margin-top: 10px;
+  background-color: #00b894;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
+  <div class="welcome-screen" id="welcome">
+    <h1>⚠️ ATENÇÃO ⚠️<br>⭕ BEM-VINDO AO SITE OFICIAL DE VENDAS DE ARQUIVOS ⭕</h1>
+    <button onclick="mostrarFormulario()">Ir para Atendimento</button>
+  </div>  <div class="container" id="pagamento">
+    <h2>‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
+    <div class="info-mpesa">
+      +258 852361783<br>
+      _CONFIRME O NOME ANTES DE ENVIAR_<br>
+      NOME: <strong>CARMÓNIO</strong> ❗<br>
+      VALOR: <strong>15 MT</strong>
+    </div><button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
+  COMO FAZER O PAGAMENTO - PASSO A PASSO
+</button>
 
-  <h1>🇲🇿 TABELA DE PREÇOS - MOZ VIP WAY 🇲🇿</h1>
+<ul style="text-align: left;">
+  <li><strong>Passo 1:</strong> Faz o pagamento para o número <strong>+258852361783</strong></li>
+  <li><strong>Passo 2:</strong> Confirma que o nome é <strong>CARMÓNIO</strong></li>
+  <li><strong>Passo 3:</strong> Faz screenshot da mensagem de envio e envia!</li>
+</ul>
 
-  <div class="info">
-    <strong>‼️ PAGAMENTO FÁCIL E RÁPIDO ‼️</strong><br><br>
-    1. CÓPIA O MEU NÚMERO: <strong>852361783</strong><br>
-    2. CONFIRMA O MEU NOME ANTES DE ENVIAR<br>
-    3. FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E ENVIE JUNTO COM SEUS DADOS (NOME + NÚMERO DE WHATSAPP)
-  </div>
+<h3>Tabela de Preços</h3>
+<table>
+  <tr><th>VPN</th><th>Preço</th></tr>
+  <tr><td>Http Custom</td><td>15 MT</td></tr>
+  <tr><td>Http Injector Lite</td><td>15 MT</td></tr>
+  <tr><td>Http Injector</td><td>15 MT</td></tr>
+  <tr><td>Linklayer VPN</td><td>15 MT</td></tr>
+  <tr><td>Wry VPN</td><td>15 MT</td></tr>
+  <tr><td>Bink Tunnel VPN</td><td>15 MT</td></tr>
+  <tr><td>Aio Tunnel VPN</td><td>15 MT</td></tr>
+</table>
 
-  <div class="tabela-precos">
-    <table>
-      <tr>
-        <th>VPN</th>
-        <th>Preço</th>
-        <th>Validade</th>
-      </tr>
-      <tr><td>HTTP CUSTOM</td><td>15 MT</td><td>7 dias</td></tr>
-      <tr><td>HTTP INJECTOR</td><td>15 MT</td><td>7 dias</td></tr>
-      <tr><td>HTTP INJECTOR LITE</td><td>15 MT</td><td>7 dias</td></tr>
-      <tr><td>BINK TÚNEL</td><td>15 MT</td><td>7 dias</td></tr>
-      <tr><td>WYR VPN</td><td>15 MT</td><td>7 dias</td></tr>
-      <tr><td>AIO TÚNEL</td><td>15 MT</td><td>7 dias</td></tr>
-      <tr><td>TLS TÚNEL</td><td>15 MT</td><td>7 dias</td></tr>
-      <tr><td>ESET VPN</td><td>15 MT</td><td>7 dias</td></tr>
-    </table>
-  </div>
+<form id="paymentForm">
+  <select id="vpn" required>
+    <option value="">Escolha sua VPN</option>
+    <option value="Http Custom">Http Custom</option>
+    <option value="Http Injector Lite">Http Injector Lite</option>
+    <option value="Http Injector">Http Injector</option>
+    <option value="Linklayer VPN">Linklayer VPN</option>
+    <option value="Wry VPN">Wry VPN</option>
+    <option value="Bink Tunnel VPN">Bink Tunnel VPN</option>
+    <option value="Aio Tunnel VPN">Aio Tunnel VPN</option>
+  </select>
 
-  <div class="formulario">
-    <form onsubmit="return validarFormulario()">
-      <input type="text" id="nome" placeholder="Seu Nome" required><br>
-      <input type="tel" id="numero" placeholder="Número com WhatsApp" required><br>
-      <button class="btn-whatsapp" onclick="enviarWhatsapp()">Enviar no WhatsApp</button>
-    </form>
-  </div>
+  <input type="text" id="name" placeholder="Seu nome" required>
+  <input type="text" id="phone" placeholder="Seu número de WhatsApp" required>
+  <textarea id="feedback" placeholder="Sua opinião (opcional)"></textarea>
+  <input type="file" id="screenshot" accept="image/*" title="ENVIAR FOTO DE CONFIRMAÇÃO DO PAGAMENTO"><br>
 
-  <script>
-    function validarFormulario() {
-      const nome = document.getElementById('nome').value;
-      const numero = document.getElementById('numero').value;
-      if (!nome || !numero) {
-        alert("Por favor preencha todos os campos!");
-        return false;
-      }
-      return true;
+  <button type="submit" class="submit">Solicitar o seu arquivo no WhatsApp</button>
+</form>
+
+<div class="message" id="statusMessage"></div>
+
+<div class="comentarios">
+  <h3>Deixe um comentário:</h3>
+  <textarea placeholder="Escreva aqui seu comentário..."></textarea>
+  <button onclick="alert('Comentário enviado! Obrigado!')">Enviar Comentário</button>
+</div>
+
+<h3>Links Úteis:</h3>
+<button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">Grupo de WhatsApp</button>
+<button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">Configuração Privada</button>
+<button class="telegram-button" onclick="window.open('https://t.me/MOZVIPWEY', '_blank')">Grupo de Telegram</button>
+
+<p style="margin-top: 20px; font-weight: bold; color: red;">⚠️ A sua segurança é a minha prioridade ⚠️</p>
+
+  </div>  <script>
+    function mostrarFormulario() {
+      document.getElementById('welcome').style.display = 'none';
+      document.getElementById('pagamento').style.display = 'block';
     }
 
-    function enviarWhatsapp() {
-      const nome = document.getElementById('nome').value;
-      const numero = document.getElementById('numero').value;
-      const msg = `Olá! Sou ${nome}, meu número é ${numero}. Já fiz o pagamento.`;
-      const link = `https://wa.me/258852361783?text=${encodeURIComponent(msg)}`;
-      window.open(link, '_blank');
-    }
-  </script>
+    document.getElementById("paymentForm").onsubmit = function(event) {
+      event.preventDefault();
 
-</body>
+      let nome = document.getElementById("name").value;
+      let vpn = document.getElementById("vpn").value;
+      let phone = document.getElementById("phone").value;
+      let feedback = document.getElementById("feedback").value;
+
+      let texto = `Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
+      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
+
+      document.getElementById("statusMessage").innerText = "A abrir WhatsApp...";
+
+      setTimeout(() => {
+        window.open(linkWhatsApp, "_blank");
+      }, 1500);
+    };
+  </script></body>
 </html>
