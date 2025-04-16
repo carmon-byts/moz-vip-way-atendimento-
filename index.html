@@ -2,71 +2,6 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Pagamento - 🇲🇿 MOZ VIP WAY 🇲🇿</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-    header {
-      background: #0088cc;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      padding: 40px;
-      text-align: center;
-    }
-    .payment-info {
-      background: #fff;
-      padding: 30px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .payment-info p {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-    }
-    .payment-button {
-      padding: 12px 24px;
-      background-color: #0088cc;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .payment-button:hover {
-      background-color: #005f8c;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Pagamento</h1>
-  </header>
-
-  <div class="container">
-    <h2>Complete seu pagamento via M-Pesa</h2>
-
-    <div class="payment-info">
-      <p>Para finalizar sua compra, por favor envie o valor para o número M-Pesa:</p>
-      <p><strong>+258 85 236 1783</strong></p>
-      <p>Depois de realizar o pagamento, envie o comprovante para o WhatsApp.</p>
-
-      <button class="payment-button" onclick="window.location.href='chat.html'">Enviar Comprovante</button>
-    </div>
-  </div>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
   <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
   <style>
     body {
@@ -81,204 +16,48 @@
       height: 100vh;
       text-align: center;
     }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     h1 {
       font-size: 2.5em;
       color: #0088cc;
       margin-bottom: 10px;
     }
+
     p {
-      font-size: 1.2em;
-      color: #444;
+      font-size: 1.3em;
+      color: #333;
       margin-bottom: 30px;
     }
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
+
+    .button {
       padding: 12px 24px;
       background-color: #0088cc;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      font-size: 1em;
       transition: background 0.3s;
     }
-    .buttons a:hover {
+
+    .button:hover {
       background-color: #005f8c;
-    }
-    .animation {
-      width: 60px;
-      height: 60px;
-      border: 6px solid #0088cc;
-      border-top: 6px solid transparent;
-      border-radius: 50%;
-      animation: spin 1.2s linear infinite;
-      margin: 20px auto;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
+
+  <img src="logo.jpg" alt="Logo MOZ VIP WAY" class="logo">
 
   <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
-  <p>Seu portal confiável para VPNs rápidas, seguras e automáticas.</p>
+  <p>📡 BEM-VINDO AO SITE DE VENDA DE ARQUIVOS PARA VPN'S 📡</p>
 
-  <div class="animation"></div>
-
-  <div class="buttons">
-    <a href="precos.html">Tabela de Preços</a>
-    <a href="pagamento.html">Pagamento</a>
-    <a href="chat.html">Comentários</a>
-  </div>
+  <a href="precos.html" class="button">Ver Tabela de Preços</a>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Tabela de Preços - 🇲🇿 MOZ VIP WAY 🇲🇿</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-    header {
-      background: #0088cc;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      padding: 40px;
-      text-align: center;
-    }
-    .prices {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 30px;
-    }
-    .price-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 200px;
-    }
-    .price-card h3 {
-      font-size: 1.5em;
-      color: #0088cc;
-    }
-    .price-card p {
-      font-size: 1.2em;
-      color: #444;
-    }
-    .form {
-      margin-top: 30px;
-      background: #f0f0f0;
-      padding: 20px;
-      border-radius: 8px;
-    }
-    .form input, .form select {
-      padding: 10px;
-      margin-bottom: 15px;
-      width: 80%;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-    .form button {
-      padding: 12px 24px;
-      background-color: #0088cc;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .form button:hover {
-      background-color: #005f8c;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Tabela de Preços</h1>
-  </header>
-
-  <div class="container">
-    <h2>Escolha o seu Plano</h2>
-
-    <div class="prices">
-      <div class="price-card">
-        <h3>Plano Básico</h3>
-        <p>Preço: 150MT</p>
-        <p>Ultra Rápido</p>
-        <p>Compatível com Vodacom e TMcel</p>
-      </div>
-      <div class="price-card">
-        <h3>Plano Premium</h3>
-        <p>Preço: 250MT</p>
-        <p>Ultra Rápido</p>
-        <p>Suporte Prioritário</p>
-      </div>
-    </div>
-
-    <div class="form">
-      <h3>Preencha seus dados para pagamento</h3>
-      <form action="pagamento.html">
-        <input type="text" placeholder="Nome Completo" required><br>
-        <input type="text" placeholder="Número de Telefone" required><br>
-        <select>
-          <option value="vodacom">Vodacom</option>
-          <option value="tmcel">TMcel</option>
-        </select><br>
-        <button type="submit">Prosseguir para Pagamento</button>
-      </form>
-    </div>
-  </div>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Comentários e Chat - 🇲🇿 MOZ VIP WAY 🇲🇿</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-    header {
-      background: #0088cc;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      padding: 40px;
-      text-align: center;
-    }
-    .chat-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-height: 400px;
-      overflow-y: auto;
-    }
-    .chat-message {
-      padding: 10px;
-      margin-bottom: 10px;
-      background: #e0f7fa;
-      border-radius: 8px;
-      text-align: left;
-    }
-    .chat-message p {
-      margin: 0;
-    }
