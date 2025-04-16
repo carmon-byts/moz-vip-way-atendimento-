@@ -20,95 +20,95 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       animation: fadeIn 2s ease-in-out;
       position: relative;
     }
 
-    .welcome-screen h1 {
-      font-size: 4rem;
+    h1 {
+      font-size: 3.5rem;
       margin: 0 20px 30px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 25px;
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
       border-radius: 15px;
       font-weight: bold;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+      text-shadow: 2px 2px 10px black;
     }
 
     .welcome-screen button {
-      padding: 20px 50px;
-      font-size: 24px;
+      padding: 20px 40px;
+      font-size: 22px;
+      margin: 10px;
       background-color: #00cc66;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .welcome-screen button:hover {
       background-color: #00994d;
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
+    /* Animação fade-in */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    .online-count {
+    /* Usuários online */
+    .online-counter {
       position: absolute;
       top: 15px;
       right: 20px;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.7);
       padding: 10px 20px;
-      border-radius: 10px;
+      border-radius: 20px;
       font-size: 18px;
-      font-weight: bold;
-      color: #00ff99;
       display: flex;
       align-items: center;
       gap: 10px;
-      animation: pulse 2s infinite;
     }
 
-    .online-count i {
-      font-style: normal;
-      color: yellow;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    .online-icon {
+      background-color: #00ff55;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
   <div class="welcome-screen" id="welcome">
-    <div class="online-count">
-      <i>👥</i><span id="userCount">0</span> usuários online
+    <div class="online-counter">
+      <span class="online-icon"></span>
+      <span id="userCount">...</span> usuários online
     </div>
+
     <h1>⚠️ ATENÇÃO ⚠️<br>⭕ BEM-VINDO AO SITE OFICIAL DE VENDAS DE ARQUIVOS ⭕</h1>
-    <button onclick="abrirComentarios()">Ver Comentários</button>
+
+    <button onclick="navegarPara('atendimento')">Ir para Atendimento</button>
+    <button onclick="navegarPara('comentarios')">Comentários</button>
+    <button onclick="navegarPara('precos')">Tabela de Preços</button>
   </div>
 
   <script>
-    // Simular número de usuários online variando entre 20 e 40
+    // Número de usuários online entre 20 e 40 com atualização a cada 3 segundos
     function atualizarUsuarios() {
-      const span = document.getElementById('userCount');
-      let count = Math.floor(Math.random() * 21) + 20;
-      span.innerText = count;
+      const numero = Math.floor(Math.random() * 21) + 20;
+      document.getElementById("userCount").textContent = numero;
     }
     setInterval(atualizarUsuarios, 3000);
     atualizarUsuarios();
 
-    function abrirComentarios() {
-      // Animação suave para transição futura
-      document.getElementById('welcome').style.opacity = '0';
-      setTimeout(() => {
-        window.location.href = 'comentarios.html'; // página de comentários
-      }, 500);
+    // Simulação de animação ao clicar nos botões
+    function navegarPara(destino) {
+      alert('Redirecionando para ' + destino + '... (em desenvolvimento)');
+      // Aqui você pode usar: window.location.href = destino.html;
     }
   </script>
 </body>
 </html>
-
