@@ -35,14 +35,49 @@
       padding: 15px;
       border-radius: 10px;
     }
-    .welcome-screen button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #00cc66;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    .botao-container {
+      background-color: #007bff;
+      padding: 20px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      animation: slideUp 1s ease-in-out;
+      max-width: 90%;
+      margin: 0 auto;
+      flex-wrap: wrap;
     }
+    .botao-container button {
+      background-color: #00cc66;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .botao-container button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .container {
       display: none;
       max-width: 800px;
@@ -134,8 +169,11 @@
   <div class="welcome-screen" id="welcome">
     <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
-    <button onclick="mostrarFormulario()">Ir para Atendimento</button>
-    <button class="comentarios-button" onclick="window.location.href='comentarios.html'">Comentários</button>
+
+    <div class="botao-container">
+      <button onclick="mostrarFormulario()">Ir para Atendimento</button>
+      <button onclick="window.location.href='comentarios.html'">Comentários</button>
+    </div>
   </div>
 
   <div class="container" id="pagamento">
@@ -230,4 +268,3 @@
   </script>
 </body>
 </html>
-
