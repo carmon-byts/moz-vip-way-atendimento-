@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+    }
+
+    .welcome-screen {
+      background-image: url('mozvip-fundo.jpg'); /* Sua imagem de fundo */
+      background-size: cover; /* Garantir que a imagem cubra toda a tela */
+      background-position: center;
+      background-attachment: fixed; /* Faz a imagem de fundo não rolar ao rolar a página */
+      height: 100vh; /* Garante que o fundo cubra toda a tela */
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0 20px 20px;
+      background: rgba(0,0,0,0.5);
+      padding: 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .site-title {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 25px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .botao {
+      padding: 15px 30px;
+      margin: 10px auto;
+      width: 70%;
+      font-size: 20px;
+      background-color: #00cc66;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #00b359;
+      transform: scale(1.05);
+    }
+
+    .online-box {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background-color: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .emoji {
+      font-size: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-screen">
+    <div class="site-title">🇲🇿 MOZ VIP WAY 🇲🇿</div>
+    <div class="online-box">
+      <span class="emoji">🟢</span> 
+      <span id="userCount">25</span> usuários online
+    </div>
+    <h1>⚠️ BEM-VINDO AO SITE DE VENDA DE VPNs ⚠️</h1>
+    <button class="botao" onclick="window.location.href='tabela.html'">📊 Tabela de Preços</button>
+    <button class="botao" onclick="window.location.href='comentarios.html'">💬 Comentários</button>
+    <button class="botao" onclick="window.location.href='atendimento.html'">📞 Atendimento</button>
+  </div>
+
+  <script>
+    function atualizarUsuarios() {
+      const userCount = document.getElementById("userCount");
+      let numero = Math.floor(Math.random() * 21) + 20; // de 20 a 40
+      userCount.textContent = numero;
+    }
+
+    setInterval(atualizarUsuarios, 3000); // atualiza a cada 3 segundos
+  </script>
+</body>
+</html>
+
