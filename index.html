@@ -1,138 +1,233 @@
 <!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
-    header, footer { background: #111; color: white; padding: 10px 0; text-align: center; }
-    .online-counter {
-      position: fixed; top: 10px; right: 10px; background: #28a745; color: white;
-      padding: 10px 15px; border-radius: 50px; font-size: 18px; display: flex;
-      align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    nav { display: flex; justify-content: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-    nav button {
-      background: #007BFF; color: white; padding: 12px 24px; border: none; border-radius: 8px;
-      font-size: 16px; cursor: pointer; transition: transform 0.2s;
-    }
-    nav button:hover { transform: scale(1.05); }
-    main { padding: 20px; min-height: 100vh; animation: fadeIn 1s ease-in-out; }
-    .content-page { display: none; animation: fadeIn 0.8s ease-in-out; }
-    .content-page.active { display: block; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px; }
-    table, th, td { border: 1px solid #ccc; }
-    th, td { padding: 10px; text-align: center; }
-    .info-box, .chat div { background: #fff; padding: 10px; border-radius: 10px; margin: 10px 0; }
-    .copy-btn { background: #28a745; color: white; border: none; padding: 8px 12px; margin-left: 10px; border-radius: 5px; cursor: pointer; }
-    .highlight-red { color: red; font-weight: bold; }
-    .reaction { margin-left: 10px; color: #ff9900; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }.welcome-screen {
+  background-image: url('bg-mozvip.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-screen h1 {
+  font-size: 2rem;
+  margin: 0 20px 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.welcome-screen button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #00cc66;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container {
+  display: none;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.info-mpesa {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: red;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+input, textarea, select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type=file]::file-selector-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.submit {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+.tutorial-button, .grupo-button, .config-button, .telegram-button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.comentarios {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.comentarios textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+.comentarios button {
+  margin-top: 10px;
+  background-color: #00b894;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
   </style>
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.content-page').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-    }
-    function atualizarOnline() {
-      const online = Math.floor(Math.random() * 40) + 1;
-      const onlineCounter = document.getElementById('online-count');
-      onlineCounter.innerText = online + ' usuários online';
-    }
-    window.onload = atualizarOnline;
-    setInterval(atualizarOnline, 5000);
-  </script>
 </head>
 <body>
-  <div class="online-counter" id="online-count">
-    <i class="fas fa-users"></i> 0 usuários online
-  </div>
-  <header>
-    <h1>📱 BEM VINDO AO SITE OFICIAL 📱<br>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
-    <nav>
-      <button onclick="showPage('inicio')">Início</button>
-      <button onclick="showPage('tabela')">Tabela de Preços</button>
-      <button onclick="showPage('pagamento')">Área de Pagamento</button>
-      <button onclick="showPage('chat')">Chat de Conversa</button>
-    </nav>
-  </header>
-  <main>
-    <!-- Página 1 - Início -->
-    <div id="inicio" class="content-page active">
-      <h2>🔥 Bem-vindo ao nosso site! 🔥</h2>
-      <p>Escolha a VPN ideal para você e aproveite uma navegação mais segura e rápida!</p>
-    </div><!-- Página 2 - Tabela de Preços -->
-<div id="tabela" class="content-page">
-  <h2 style="color:red; text-align:center">‼️BEM VINDO À TABELA DE PREÇOS‼️</h2>
-  <table>
-    <tr><th>VPN</th><th>Preço</th><th>Compatível</th><th>Operadora</th><th>Validade</th><th>Velocidade</th></tr>
-    <tr><td>Http Custom</td><td>15 MT</td><td>Android</td><td>Vodacom / TMcel</td><td>7 Dias</td><td>Ultra Rápido ⚡</td></tr>
-    <tr><td>Http Injector</td><td>15 MT</td><td>Android</td><td>Vodacom / TMcel</td><td>7 Dias</td><td>Ultra Rápido ⚡</td></tr>
-    <tr><td>TLS Tunnel</td><td>15 MT</td><td>Android</td><td>Vodacom / TMcel</td><td>7 Dias</td><td>Ultra Rápido ⚡</td></tr>
-    <tr><td>ESET VPN</td><td>15 MT</td><td>Android</td><td>Vodacom / TMcel</td><td>7 Dias</td><td>Ultra Rápido ⚡</td></tr>
-  </table>
+  <div class="welcome-screen" id="welcome">
+    <h1>⚠️ ATENÇÃO ⚠️<br>⭕ BEM-VINDO AO SITE OFICIAL DE VENDAS DE ARQUIVOS ⭕</h1>
+    <button onclick="mostrarFormulario()">Ir para Atendimento</button>
+  </div>  <div class="container" id="pagamento">
+    <h2>‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
+    <div class="info-mpesa">
+      +258 852361783<br>
+      _CONFIRME O NOME ANTES DE ENVIAR_<br>
+      NOME: <strong>CARMÓNIO</strong> ❗<br>
+      VALOR: <strong>15 MT</strong>
+    </div><button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
+  COMO FAZER O PAGAMENTO - PASSO A PASSO
+</button>
+
+<ul style="text-align: left;">
+  <li><strong>Passo 1:</strong> Faz o pagamento para o número <strong>+258852361783</strong></li>
+  <li><strong>Passo 2:</strong> Confirma que o nome é <strong>CARMÓNIO</strong></li>
+  <li><strong>Passo 3:</strong> Faz screenshot da mensagem de envio e envia!</li>
+</ul>
+
+<h3>Tabela de Preços</h3>
+<table>
+  <tr><th>VPN</th><th>Preço</th></tr>
+  <tr><td>Http Custom</td><td>15 MT</td></tr>
+  <tr><td>Http Injector Lite</td><td>15 MT</td></tr>
+  <tr><td>Http Injector</td><td>15 MT</td></tr>
+  <tr><td>Linklayer VPN</td><td>15 MT</td></tr>
+  <tr><td>Wry VPN</td><td>15 MT</td></tr>
+  <tr><td>Bink Tunnel VPN</td><td>15 MT</td></tr>
+  <tr><td>Aio Tunnel VPN</td><td>15 MT</td></tr>
+</table>
+
+<form id="paymentForm">
+  <select id="vpn" required>
+    <option value="">Escolha sua VPN</option>
+    <option value="Http Custom">Http Custom</option>
+    <option value="Http Injector Lite">Http Injector Lite</option>
+    <option value="Http Injector">Http Injector</option>
+    <option value="Linklayer VPN">Linklayer VPN</option>
+    <option value="Wry VPN">Wry VPN</option>
+    <option value="Bink Tunnel VPN">Bink Tunnel VPN</option>
+    <option value="Aio Tunnel VPN">Aio Tunnel VPN</option>
+  </select>
+
+  <input type="text" id="name" placeholder="Seu nome" required>
+  <input type="text" id="phone" placeholder="Seu número de WhatsApp" required>
+  <textarea id="feedback" placeholder="Sua opinião (opcional)"></textarea>
+  <input type="file" id="screenshot" accept="image/*" title="ENVIAR FOTO DE CONFIRMAÇÃO DO PAGAMENTO"><br>
+
+  <button type="submit" class="submit">Solicitar o seu arquivo no WhatsApp</button>
+</form>
+
+<div class="message" id="statusMessage"></div>
+
+<div class="comentarios">
+  <h3>Deixe um comentário:</h3>
+  <textarea placeholder="Escreva aqui seu comentário..."></textarea>
+  <button onclick="alert('Comentário enviado! Obrigado!')">Enviar Comentário</button>
 </div>
 
-<!-- Página 3 - Área de Pagamento -->
-<div id="pagamento" class="content-page">
-  <h2 style="text-align:center">📲 Realize o Pagamento</h2>
-  <div class="info-box">1 - Copie o número: <strong>+258852361783</strong> <button class="copy-btn" onclick="navigator.clipboard.writeText('+258852361783')">Copiar</button></div>
-  <div class="info-box">2 - Confirme o nome antes da transferência.</div>
-  <div class="info-box">3 - Nome: <strong>CARMÓNIO</strong> <button class="copy-btn" onclick="navigator.clipboard.writeText('CARMÓNIO')">Copiar</button></div>
-  <div class="info-box">4 - Faça screenshot da transferência e envie na opção de obter o arquivo.</div>
-  <div class="info-box highlight-red">5 - Preencha com seus dados corretamente!</div>
+<h3>Links Úteis:</h3>
+<button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">Grupo de WhatsApp</button>
+<button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">Configuração Privada</button>
+<button class="telegram-button" onclick="window.open('https://t.me/MOZVIPWEY', '_blank')">Grupo de Telegram</button>
 
-  <h3>📤 Envie seus dados:</h3>
-  <form action="processar_dados.php" method="POST">
-    <label>Nome:</label><br><input type="text" name="nome" required><br>
-    <label>WhatsApp:</label><br><input type="text" name="whatsapp" required><br>
-    <label>Tipo de VPN:</label><br>
-    <select name="vpn" required>
-      <option>Http Custom</option>
-      <option>Http Injector</option>
-      <option>TLS Tunnel</option>
-      <option>ESET VPN</option>
-    </select><br><br>
-    <button style="background:blue; color:white; padding:10px; border:none; border-radius:6px;">Enviar Dados</button>
-  </form>
+<p style="margin-top: 20px; font-weight: bold; color: red;">⚠️ A sua segurança é a minha prioridade ⚠️</p>
 
-  <br>
-  <a href="https://wa.me/258852361783?text=Arquivo%20comprado%20com%20sucesso" target="_blank">
-    <button style="background:green; color:white; padding:12px; font-size:16px; border:none; border-radius:8px;">Obter Arquivo</button>
-  </a>
-</div>
+  </div>  <script>
+    function mostrarFormulario() {
+      document.getElementById('welcome').style.display = 'none';
+      document.getElementById('pagamento').style.display = 'block';
+    }
 
-<!-- Página 4 - Chat de Conversa -->
-<div id="chat" class="content-page">
-  <h2 style="text-align:center; color:#007BFF;">💬 Chat de Conversa</h2>
-  <div style="background: url('https://www.transparenttextures.com/patterns/cubes.png'); padding: 15px; border-radius: 10px; max-height: 500px; overflow-y: auto; border: 2px solid #007BFF;">
-    <div style="background:#DCF8C6; padding:10px; border-radius:10px; margin-bottom:8px; max-width:80%;">
-      <strong>Cliente1:</strong><br>Recebi meu arquivo rapidinho, obrigado!
-    </div>
-    <div style="background:#FFF; padding:10px; border-radius:10px; margin-bottom:8px; margin-left:auto; max-width:80%;">
-      <strong>Atendente:</strong><br>Disponha! Qualquer dúvida estamos aqui.
-    </div>
-    <div style="background:#DCF8C6; padding:10px; border-radius:10px; margin-bottom:8px; max-width:80%;">
-      <strong>Cliente2:</strong><br>VPN funciona bem com TMcel?
-    </div>
-    <div style="background:#FFF; padding:10px; border-radius:10px; margin-bottom:8px; margin-left:auto; max-width:80%;">
-      <strong>Atendente:</strong><br>Sim, com TMcel e Vodacom. Ultra rápido!
-    </div>
-  </div>
+    document.getElementById("paymentForm").onsubmit = function(event) {
+      event.preventDefault();
 
-  <br>
-  <form action="enviar_mensagem.php" method="POST">
-    <label>Envie sua mensagem:</label><br>
-    <textarea name="mensagem" required rows="3" style="width:100%; border-radius:8px; padding:8px;"></textarea><br>
-    <button style="background:#007BFF; color:white; padding:10px; border:none; border-radius:6px; margin-top:5px;">Enviar Mensagem</button>
-  </form>
-</div>
+      let nome = document.getElementById("name").value;
+      let vpn = document.getElementById("vpn").value;
+      let phone = document.getElementById("phone").value;
+      let feedback = document.getElementById("feedback").value;
 
-  </main>
-  <footer>
-    <p>Todos os direitos reservados &copy; MOZ VIP WAY</p>
-  </footer>
-</body>
+      let texto = `Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
+      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
+
+      document.getElementById("statusMessage").innerText = "A abrir WhatsApp...";
+
+      setTimeout(() => {
+        window.open(linkWhatsApp, "_blank");
+      }, 1500);
+    };
+  </script></body>
 </html>
+
