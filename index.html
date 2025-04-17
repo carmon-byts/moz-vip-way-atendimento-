@@ -14,13 +14,9 @@
       background-image: url('bg-mozvip.jpg');
       background-size: cover;
       background-position: center;
-      height: 85vh;
       color: white;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      animation: fadeIn 2s ease-in-out;
+      padding-top: 20px;
       position: relative;
     }
 
@@ -28,14 +24,29 @@
       font-size: 6rem;
       font-weight: bold;
       margin-bottom: 20px;
-      margin-top: -40px;
-      color: #fff;
-      text-shadow: 4px 4px 12px #000;
+      margin-top: -10px;
+      color: #00ffff;
+      text-shadow: 2px 2px 8px #000;
       text-transform: uppercase;
       letter-spacing: 3px;
-      background: linear-gradient(to right, #FFD700, #FF8C00, #FF4500);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    }
+
+    .promo-banner {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff4500;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      border-radius: 12px;
+      margin-top: 20px;
+      animation: pulse 1.5s infinite;
+      display: inline-block;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
     .welcome-screen h2 {
@@ -80,10 +91,6 @@
     }
 
     .links-uteis {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
       padding: 35px 0;
       background-color: rgba(0, 0, 0, 0.8);
       text-align: center;
@@ -117,14 +124,9 @@
     }
 
     .container {
-      display: none;
       max-width: 100%;
-      height: 100vh;
-      margin: 0;
       padding: 20px;
       background: #fff;
-      border-radius: 0;
-      box-shadow: none;
       text-align: center;
       overflow-y: auto;
     }
@@ -189,7 +191,7 @@
     input, textarea, select {
       width: 95%;
       padding: 15px;
-      margin: 20px 0; /* Aumentado para afastar mais */
+      margin: 20px 0;
       border-radius: 8px;
       border: 2px solid #007bff;
       font-size: 16px;
@@ -208,10 +210,10 @@
     button.submit {
       background-color: #28a745;
       color: white;
-      padding: 25px 50px; /* Aumentado */
+      padding: 25px 50px;
       border: none;
       border-radius: 10px;
-      font-size: 26px; /* Aumentado */
+      font-size: 26px;
       cursor: pointer;
       font-weight: bold;
       margin-top: 20px;
@@ -236,22 +238,6 @@
       margin-top: 20px;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    /* Alterações solicitadas */
-    .info-mpesa #numero-mpesa, .info-mpesa #nome-mpesa {
-      color: blue;
-    }
-
-    .info-mpesa span, .info-mpesa strong {
-      font-size: 25px;
-      font-weight: bold;
-    }
-
     #screenshot-message {
       font-size: 28px;
       font-weight: bold;
@@ -266,33 +252,19 @@
       margin: 20px auto;
       text-align: center;
     }
-
-    .promo-message {
-      font-size: 36px;
-      font-weight: bold;
-      color: red;
-      margin-top: 20px;
-      text-transform: uppercase;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
   </style>
 </head>
 <body>
-  <div class="welcome-screen" id="welcome">
+
+  <div class="welcome-screen">
     <div class="online-counter">
       <span>🟢</span>
       <span id="online-number">38</span> online
     </div>
     <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
-    <div class="promo-message">🔥 PROMOÇÃO ÚNICA 🔥</div>
+    <div class="promo-banner">🔥 PROMOÇÃO ÚNICA 🔥</div>
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
     <div class="welcome-buttons">
-      <button onclick="mostrarFormulario()">💬 Ir para Atendimento</button>
       <button onclick="window.location.href='comentarios.html'">⭐ Comentários</button>
     </div>
     <div class="links-uteis">
@@ -303,7 +275,8 @@
       <p>⚠️ A sua segurança é a minha prioridade ⚠️</p>
     </div>
   </div>
-  <div class="container" id="pagamento">
+
+  <div class="container">
     <h2 class="pagemento-title">‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
     <div class="info-mpesa">
       📱 <span id="numero-mpesa">+258 852361783</span>
@@ -319,7 +292,7 @@
     </button>
 
     <div id="screenshot-message">
-      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E EVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
+      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E ENVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
     </div>
 
     <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
@@ -348,4 +321,31 @@
 
       <input type="text" id="name" placeholder="✍️ Seu nome" required>
       <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
-      <textarea id="feedback"
+      <textarea id="feedback" placeholder="📝 Sua opinião (opcional)"></textarea>
+      <input type="file" id="screenshot" accept="image/*"><br>
+      <button type="submit" class="submit">📤 Solicitar o seu arquivo no WhatsApp</button>
+    </form>
+
+    <div class="message" id="statusMessage"></div>
+  </div>
+
+  <script>
+    function copiarTexto(id) {
+      const texto = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(texto);
+      alert("Copiado: " + texto);
+    }
+
+    document.getElementById("paymentForm").onsubmit = function(event) {
+      event.preventDefault();
+      let nome = document.getElementById("name").value;
+      let vpn = document.getElementById("vpn").value;
+      let phone = document.getElementById("phone").value;
+      let feedback = document.getElementById("feedback").value;
+      let texto = `✅ Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
+      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
+      window.open(linkWhatsApp, '_blank');
+    };
+  </script>
+</body>
+</html>
