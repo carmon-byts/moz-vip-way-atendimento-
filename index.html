@@ -14,9 +14,12 @@
       background-image: url('bg-mozvip.jpg');
       background-size: cover;
       background-position: center;
+      height: 85vh;
       color: white;
       text-align: center;
-      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
     }
 
@@ -24,9 +27,9 @@
       font-size: 6rem;
       font-weight: bold;
       margin-bottom: 20px;
-      margin-top: -10px;
-      color: #00ffff;
-      text-shadow: 2px 2px 8px #000;
+      margin-top: -40px;
+      color: #ff5733; /* Nova cor para o título */
+      text-shadow: none; /* Removida animação 3D */
       text-transform: uppercase;
       letter-spacing: 3px;
     }
@@ -91,6 +94,10 @@
     }
 
     .links-uteis {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       padding: 35px 0;
       background-color: rgba(0, 0, 0, 0.8);
       text-align: center;
@@ -124,9 +131,14 @@
     }
 
     .container {
+      display: none;
       max-width: 100%;
+      height: 100vh;
+      margin: 0;
       padding: 20px;
       background: #fff;
+      border-radius: 0;
+      box-shadow: none;
       text-align: center;
       overflow-y: auto;
     }
@@ -252,11 +264,12 @@
       margin: 20px auto;
       text-align: center;
     }
+
   </style>
 </head>
 <body>
 
-  <div class="welcome-screen">
+  <div class="welcome-screen" id="welcome">
     <div class="online-counter">
       <span>🟢</span>
       <span id="online-number">38</span> online
@@ -265,6 +278,7 @@
     <div class="promo-banner">🔥 PROMOÇÃO ÚNICA 🔥</div>
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
     <div class="welcome-buttons">
+      <button onclick="mostrarFormulario()">💬 Ir para Atendimento</button>
       <button onclick="window.location.href='comentarios.html'">⭐ Comentários</button>
     </div>
     <div class="links-uteis">
@@ -276,7 +290,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="pagamento">
     <h2 class="pagemento-title">‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
     <div class="info-mpesa">
       📱 <span id="numero-mpesa">+258 852361783</span>
@@ -290,11 +304,9 @@
     <button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
       📹 COMO FAZER O PAGAMENTO - PASSO A PASSO
     </button>
-
     <div id="screenshot-message">
-      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E ENVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
+      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E EVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
     </div>
-
     <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
     <table>
       <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
@@ -306,7 +318,6 @@
       <tr><td>🚀 Bink Tunnel VPN</td><td>15 MT</td></tr>
       <tr><td>📡 Aio Tunnel VPN</td><td>15 MT</td></tr>
     </table>
-
     <form id="paymentForm">
       <select id="vpn" required>
         <option value="">📲 Escolha sua VPN</option>
@@ -318,18 +329,21 @@
         <option value="Bink Tunnel VPN">Bink Tunnel VPN</option>
         <option value="Aio Tunnel VPN">Aio Tunnel VPN</option>
       </select>
-
       <input type="text" id="name" placeholder="✍️ Seu nome" required>
       <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
       <textarea id="feedback" placeholder="📝 Sua opinião (opcional)"></textarea>
       <input type="file" id="screenshot" accept="image/*"><br>
       <button type="submit" class="submit">📤 Solicitar o seu arquivo no WhatsApp</button>
     </form>
-
     <div class="message" id="statusMessage"></div>
   </div>
 
   <script>
+    function mostrarFormulario() {
+      document.getElementById('welcome').style.display = 'none';
+      document.getElementById('pagamento').style.display = 'block';
+    }
+
     function copiarTexto(id) {
       const texto = document.getElementById(id).textContent;
       navigator.clipboard.writeText(texto);
@@ -344,8 +358,4 @@
       let feedback = document.getElementById("feedback").value;
       let texto = `✅ Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
       let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
-      window.open(linkWhatsApp, '_blank');
-    };
-  </script>
-</body>
-</html>
+      window.open(link
