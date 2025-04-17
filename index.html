@@ -10,12 +10,11 @@
       background-color: #f4f4f4;
     }
 
-    /* TELA INICIAL */
     .welcome-screen {
       background-image: url('bg-mozvip.jpg');
       background-size: cover;
       background-position: center;
-      height: 85vh; /* diminuído de 100vh para 85vh */
+      height: 85vh;
       color: white;
       text-align: center;
       display: flex;
@@ -24,22 +23,23 @@
       animation: fadeIn 2s ease-in-out;
       position: relative;
     }
+
     .welcome-screen h1 {
-      font-size: 5rem; /* Aumentado */
+      font-size: 6rem;
       font-weight: bold;
       margin-bottom: 20px;
-      margin-top: -60px; /* Levantado */
+      margin-top: -40px;
       color: #fff;
-      text-shadow: 2px 2px 8px #000;
+      text-shadow: 4px 4px 12px #000;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       background: linear-gradient(to right, #FFD700, #FF8C00, #FF4500);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .welcome-screen h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin: 0 20px 30px;
       background: rgba(0,0,0,0.6);
       padding: 20px;
@@ -79,6 +79,43 @@
       box-shadow: 0 0 10px #0f0;
     }
 
+    .links-uteis {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 35px 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+    }
+
+    .links-uteis h3 {
+      font-size: 28px;
+      color: yellow;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .grupo-button, .config-button, .telegram-button {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      padding: 14px 30px;
+      border-radius: 12px;
+      margin: 12px 8px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .links-uteis p {
+      font-size: 22px;
+      font-weight: bold;
+      color: red;
+      margin-top: 30px;
+      text-shadow: 1px 1px 5px #000;
+    }
+
     .container {
       display: none;
       max-width: 100%;
@@ -93,13 +130,39 @@
     }
 
     .info-mpesa {
-      font-size: 16px;
+      font-size: 24px;
       font-weight: bold;
-      margin: 20px 0;
-      color: red;
+      margin: 30px 0;
+      color: #8B0000; /* vermelho escuro */
     }
 
-    /* TABELA DE PREÇOS ATUALIZADA */
+    h2.titulo-pagamento {
+      font-size: 36px;
+      font-weight: bold;
+      color: #8B0000;
+      margin-top: 10px;
+    }
+
+    .tutorial-button {
+      font-size: 24px;
+      font-weight: bold;
+      background-color: #FFD700;
+      color: #000;
+      border: none;
+      padding: 18px 35px;
+      border-radius: 10px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+      margin-top: 15px;
+    }
+
+    h3.titulo-tabela {
+      font-size: 30px;
+      font-weight: bold;
+      color: #FF4500;
+      margin-top: 40px;
+    }
+
     table {
       margin: 20px auto;
       border-collapse: collapse;
@@ -110,14 +173,8 @@
     }
 
     @keyframes tabelaAnimacao {
-      from {
-        transform: scale(0.9);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     th, td {
@@ -138,7 +195,6 @@
       font-weight: bold;
     }
 
-    /* PERSONALIZAÇÃO DOS CAMPOS */
     input, textarea, select {
       width: 95%;
       padding: 15px;
@@ -176,57 +232,10 @@
       color: green;
     }
 
-    .tutorial-button {
-      font-size: 20px;
-      font-weight: bold;
-      background-color: #ffcc00;
-      color: #000;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 10px;
-      cursor: pointer;
-      animation: pulse 1.5s infinite;
-    }
-
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
-    }
-
-    .links-uteis {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 25px 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      text-align: center;
-    }
-
-    .links-uteis h3 {
-      font-size: 24px;
-      color: yellow;
-      margin-bottom: 20px;
-    }
-
-    .grupo-button, .config-button, .telegram-button {
-      background-color: #007bff;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      padding: 12px 25px;
-      border-radius: 10px;
-      margin: 10px 5px;
-      cursor: pointer;
-      border: none;
-    }
-
-    .links-uteis p {
-      font-size: 20px;
-      font-weight: bold;
-      color: red;
-      margin-top: 25px;
     }
   </style>
 </head>
@@ -252,7 +261,7 @@
   </div>
 
   <div class="container" id="pagamento">
-    <h2>‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
+    <h2 class="titulo-pagamento">‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
     <div class="info-mpesa">
       📱 +258 852361783<br>
       _CONFIRME O NOME ANTES DE ENVIAR_<br>
@@ -262,8 +271,7 @@
     <button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
       📹 COMO FAZER O PAGAMENTO - PASSO A PASSO
     </button>
-
-    <h3>💰 Tabela de Preços</h3>
+    <h3 class="titulo-tabela">💰 Tabela de Preços</h3>
     <table>
       <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
       <tr><td>🔐 Http Custom</td><td>15 MT</td></tr>
