@@ -79,7 +79,7 @@
       font-weight: bold;
     }
     .online-counter {
-      position: fixed; /* ALTERADO: de absolute para fixed */
+      position: fixed;
       top: 10px;
       right: 15px;
       background-color: #222;
@@ -272,6 +272,7 @@
       <p>⚠️ <span style="font-size: 34px;">A sua segurança é a minha prioridade</span> ⚠️</p>
     </div>
   </div>
+
   <div class="container" id="pagamento">
     <h2 class="pagemento-title">📡 PAGAMENTO VIA M-PESA 📡</h2>
     <div class="info-mpesa">
@@ -288,7 +289,7 @@
       📹 COMO FAZER O PAGAMENTO - PASSO A PASSO
     </button>
     <div id="screenshot-message">
-      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E EVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
+      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E ENVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
     </div>
     <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
     <table>
@@ -318,16 +319,19 @@
     </form>
     <div class="message" id="statusMessage"></div>
   </div>
+
   <script>
     function mostrarFormulario() {
       document.getElementById('welcome').style.display = 'none';
       document.getElementById('pagamento').style.display = 'block';
     }
+
     function copiarTexto(id) {
       const texto = document.getElementById(id).textContent;
       navigator.clipboard.writeText(texto);
       alert("Copiado: " + texto);
     }
+
     document.getElementById("paymentForm").onsubmit = function(event) {
       event.preventDefault();
       let nome = document.getElementById("name").value;
@@ -337,11 +341,11 @@
       let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
       window.open(linkWhatsApp, '_blank');
     };
+
     setInterval(() => {
       const numeroAleatorio = Math.floor(Math.random() * (58 - 18 + 1)) + 18;
       document.getElementById("online-number").textContent = numeroAleatorio;
-    }, 4000);
+    }, 6000);
   </script>
 </body>
 </html>
-
