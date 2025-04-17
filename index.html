@@ -323,12 +323,12 @@
         <td>15 MT</td>
       </tr>
       <tr>
-        <td>🔒 TLS Tunnel VPN</t>d
-        <tr>15 MT</td>
+        <td>🔒 TLS Tunnel VPN</td>
+        <td>15 MT</td>
       </tr>
       <tr>
         <td>🛡️ ESET VPN</td>
-        <tr>15 MT</td>
+        <td>15 MT</td>
       </tr>
       <tr>
     </table>
@@ -339,6 +339,10 @@
         <option value="" disabled selected>📂 Selecione o tipo de VPN</option>
         <option>Http Custom</option>
         <option>Http Injector Lite</option>
+        <option>TLS Tunnel VPN</option>
+        <option>Linklayer VPN</option>
+        <option>Http Injector</option>
+        <option>ESET VPN</option>
         <option>Http Injector</option>
         <option>Linklayer VPN</option>
         <option>Wry VPN</option>
@@ -373,7 +377,7 @@
     };
 
     setInterval(() => {
-      const numeroAleatorio = Math.floor(Math.random() * (58 - 18 + 1)) + 18;
+      const numeroAleatorio = Math.floor(Math.random() * (58 - 4 + 1)) + 18;
       document.getElementById("online-number").textContent = numeroAleatorio;
     }, 6000);
   </script>
