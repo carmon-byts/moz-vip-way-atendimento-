@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
   <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
@@ -8,248 +7,205 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-    }
-    .welcome-screen {
-      background-image: url('bg-mozvip.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      animation: fadeIn 2s ease-in-out;
-      position: relative;
-    }
-    .welcome-screen h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      margin-top: -40px;
-      color: #fff;
-      text-shadow: 1px 1px 4px #000;
-    }
-    .welcome-screen h2 {
-      font-size: 1.8rem;
-      margin: 0 20px 30px;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .welcome-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .welcome-buttons button {
-      padding: 35px 70px;
-      font-size: 28px;
-      background-color: #007bff;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .online-counter {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background-color: #222;
-      color: #0f0;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 0 10px #0f0;
-    }
-    .container {
-      display: none;
-      max-width: 100%;
-      height: 100vh;
-      margin: 0;
-      padding: 20px;
-      background: #fff;
-      border-radius: 0;
-      box-shadow: none;
-      text-align: center;
-      overflow-y: auto;
-    }
-    .info-mpesa {
-      font-size: 16px;
-      font-weight: bold;
-      margin: 20px 0;
-      color: red;
-    }
-    table {
-      margin: 20px auto;
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 18px;
-      animation: zoomIn 1s ease-in-out;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 15px;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
+    }.welcome-screen {
+  background-image: url('bg-mozvip.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 2s ease-in-out;
+}
 
-    /* CAMPOS AUMENTADOS COM ANIMAÇÃO E CORES */
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    input, textarea, select {
-      width: 98%;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      border: 2px solid #007bff;
-      font-size: 20px;
-      background-color: #fdfdfd;
-      animation: slideIn 0.5s ease forwards;
-    }
-    textarea {
-      resize: none;
-    }
-    input[type=file]::file-selector-button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button.submit {
-      background-color: #28a745;
-      color: white;
-      padding: 18px 30px;
-      border: none;
-      border-radius: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    .message {
-      margin-top: 20px;
-      font-weight: bold;
-      color: green;
-    }
-    .tutorial-button {
-      font-size: 20px;
-      font-weight: bold;
-      background-color: #ffcc00;
-      color: #000;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 10px;
-      cursor: pointer;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    .links-uteis {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 25px 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      text-align: center;
-    }
-    .links-uteis h3 {
-      font-size: 24px;
-      color: yellow;
-      margin-bottom: 20px;
-    }
-    .grupo-button, .config-button, .telegram-button {
-      background-color: #007bff;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      padding: 12px 25px;
-      border-radius: 10px;
-      margin: 10px 5px;
-      cursor: pointer;
-      border: none;
-    }
-    .links-uteis p {
-      font-size: 20px;
-      font-weight: bold;
-      color: red;
-      margin-top: 25px;
-    }
+.welcome-screen h1 {
+  font-size: 2rem;
+  margin: 0 20px 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.welcome-screen button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #00cc66;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container {
+  display: none;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.info-mpesa {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: red;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+input, textarea, select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type=file]::file-selector-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.submit {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+.tutorial-button, .grupo-button, .config-button, .telegram-button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.comentarios {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.comentarios textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+.comentarios button {
+  margin-top: 10px;
+  background-color: #00b894;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
-  <!-- Conteúdo permanece o mesmo até o formulário -->
-
-  <div class="container" id="pagamento">
+  <div class="welcome-screen" id="welcome">
+    <h1>⚠️ ATENÇÃO ⚠️<br>⭕ BEM-VINDO AO SITE OFICIAL DE VENDAS DE ARQUIVOS ⭕</h1>
+    <button onclick="mostrarFormulario()">Ir para Atendimento</button>
+  </div>  <div class="container" id="pagamento">
     <h2>‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
     <div class="info-mpesa">
-      📱 +258 852361783<br>
+      +258 852361783<br>
       _CONFIRME O NOME ANTES DE ENVIAR_<br>
       NOME: <strong>CARMÓNIO</strong> ❗<br>
-      VALOR: <strong>15 MT</strong> 💵
-    </div>
+      VALOR: <strong>15 MT</strong>
+    </div><button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
+  COMO FAZER O PAGAMENTO - PASSO A PASSO
+</button>
 
-    <button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
-      📹 COMO FAZER O PAGAMENTO - PASSO A PASSO
-    </button>
+<ul style="text-align: left;">
+  <li><strong>Passo 1:</strong> Faz o pagamento para o número <strong>+258852361783</strong></li>
+  <li><strong>Passo 2:</strong> Confirma que o nome é <strong>CARMÓNIO</strong></li>
+  <li><strong>Passo 3:</strong> Faz screenshot da mensagem de envio e envia!</li>
+</ul>
 
-    <ul style="text-align: left;">
-      <li><strong>1️⃣ Passo 1:</strong> Faz o pagamento para o número <strong>+258852361783</strong></li>
-      <li><strong>2️⃣ Passo 2:</strong> Confirma que o nome é <strong>CARMÓNIO</strong></li>
-      <li><strong>3️⃣ Passo 3:</strong> Faz screenshot da mensagem de envio e envia! 🖼️</li>
-    </ul>
+<h3>Tabela de Preços</h3>
+<table>
+  <tr><th>VPN</th><th>Preço</th></tr>
+  <tr><td>Http Custom</td><td>15 MT</td></tr>
+  <tr><td>Http Injector Lite</td><td>15 MT</td></tr>
+  <tr><td>Http Injector</td><td>15 MT</td></tr>
+  <tr><td>Linklayer VPN</td><td>15 MT</td></tr>
+  <tr><td>Wry VPN</td><td>15 MT</td></tr>
+  <tr><td>Bink Tunnel VPN</td><td>15 MT</td></tr>
+  <tr><td>Aio Tunnel VPN</td><td>15 MT</td></tr>
+</table>
 
-    <h3>💰 Tabela de Preços</h3>
-    <table>
-      <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
-      <tr><td>🔐 Http Custom</td><td>15 MT</td></tr>
-      <tr><td>⚙️ Http Injector Lite</td><td>15 MT</td></tr>
-      <tr><td>🛰️ Http Injector</td><td>15 MT</td></tr>
-      <tr><td>🔌 Linklayer VPN</td><td>15 MT</td></tr>
-      <tr><td>🌐 Wry VPN</td><td>15 MT</td></tr>
-      <tr><td>🚀 Bink Tunnel VPN</td><td>15 MT</td></tr>
-      <tr><td>📡 Aio Tunnel VPN</td><td>15 MT</td></tr>
-    </table>
+<form id="paymentForm">
+  <select id="vpn" required>
+    <option value="">Escolha sua VPN</option>
+    <option value="Http Custom">Http Custom</option>
+    <option value="Http Injector Lite">Http Injector Lite</option>
+    <option value="Http Injector">Http Injector</option>
+    <option value="Linklayer VPN">Linklayer VPN</option>
+    <option value="Wry VPN">Wry VPN</option>
+    <option value="Bink Tunnel VPN">Bink Tunnel VPN</option>
+    <option value="Aio Tunnel VPN">Aio Tunnel VPN</option>
+  </select>
 
-    <!-- FORMULÁRIO MODIFICADO -->
-    <form id="paymentForm">
-      <select id="vpn" required>
-        <option value="">📲 Escolha sua VPN</option>
-        <option value="Http Custom">Http Custom</option>
-        <option value="Http Injector Lite">Http Injector Lite</option>
-        <option value="Http Injector">Http Injector</option>
-        <option value="Linklayer VPN">Linklayer VPN</option>
-        <option value="Wry VPN">Wry VPN</option>
-        <option value="Bink Tunnel VPN">Bink Tunnel VPN</option>
-        <option value="Aio Tunnel VPN">Aio Tunnel VPN</option>
-      </select>
+  <input type="text" id="name" placeholder="Seu nome" required>
+  <input type="text" id="phone" placeholder="Seu número de WhatsApp" required>
+  <textarea id="feedback" placeholder="Sua opinião (opcional)"></textarea>
+  <input type="file" id="screenshot" accept="image/*" title="ENVIAR FOTO DE CONFIRMAÇÃO DO PAGAMENTO"><br>
 
-      <input type="text" id="name" placeholder="✍️ Seu nome" required>
-      <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
-      <textarea id="feedback" placeholder="📝 Sua opinião (opcional)"></textarea>
-      <input type="file" id="screenshot" accept="image/*" title="ENVIAR FOTO DE CONFIRMAÇÃO DO PAGAMENTO"><br>
+  <button type="submit" class="submit">Solicitar o seu arquivo no WhatsApp</button>
+</form>
 
-      <button type="submit" class="submit">📤 Solicitar o seu arquivo no WhatsApp</button>
-    </form>
+<div class="message" id="statusMessage"></div>
 
-    <div class="message" id="statusMessage"></div>
-  </div>
+<div class="comentarios">
+  <h3>Deixe um comentário:</h3>
+  <textarea placeholder="Escreva aqui seu comentário..."></textarea>
+  <button onclick="alert('Comentário enviado! Obrigado!')">Enviar Comentário</button>
+</div>
 
-  <script>
+<h3>Links Úteis:</h3>
+<button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">Grupo de WhatsApp</button>
+<button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">Configuração Privada</button>
+<button class="telegram-button" onclick="window.open('https://t.me/MOZVIPWEY', '_blank')">Grupo de Telegram</button>
+
+<p style="margin-top: 20px; font-weight: bold; color: red;">⚠️ A sua segurança é a minha prioridade ⚠️</p>
+
+  </div>  <script>
     function mostrarFormulario() {
       document.getElementById('welcome').style.display = 'none';
       document.getElementById('pagamento').style.display = 'block';
@@ -263,23 +219,14 @@
       let phone = document.getElementById("phone").value;
       let feedback = document.getElementById("feedback").value;
 
-      let texto = `✅ Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
+      let texto = `Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
       let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
 
-      document.getElementById("statusMessage").innerText = "⏳ A abrir WhatsApp...";
+      document.getElementById("statusMessage").innerText = "A abrir WhatsApp...";
 
       setTimeout(() => {
         window.open(linkWhatsApp, "_blank");
       }, 1500);
     };
-
-    function atualizarNumeroOnline() {
-      const numero = Math.floor(Math.random() * (47 - 24 + 1)) + 24;
-      document.getElementById("online-number").textContent = numero;
-    }
-    setInterval(atualizarNumeroOnline, 4000);
-    atualizarNumeroOnline();
-  </script>
-</body>
+  </script></body>
 </html>
-
