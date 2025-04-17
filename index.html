@@ -265,12 +265,11 @@
       <button onclick="window.location.href='mailto:aldamiguelrafael@gmail.com?subject=Opinião%20sobre%20o%20site%20MOZ%20VIP%20WAY'">✍️ Deixar sua Opinião</button>
     </div>
     <div class="links-uteis">
-      <h3>🔗 Links Úteis:</h3>
-      <button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">💬 Grupo de WhatsApp</button>
-      <button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">🔒 Configuração Privada</button>
-      <button class="telegram-button" onclick="window.open('https://t.me/MOZVIPWEY', '_blank')">📢 Grupo de Telegram</button>
-      <p>⚠️ <span style="font-size: 34px;">A sua segurança é a minha prioridade</span> ⚠️</p>
-    </div>
+    <h3>🔗 Links Úteis:</h3>
+    <button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">💬 Grupo de WhatsApp</button>
+    <button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">🔒 Configuração Privada</button>
+    <button class="telegram-button" onclick="window.open('https://t.me/MOZVIPWEY', '_blank')">📢 Grupo de Telegram</button>
+    <p>⚠️ <span style="font-size: 34px;">A sua segurança é a minha prioridade</span> ⚠️</p>
   </div>
 
   <div class="container" id="pagamento">
@@ -285,12 +284,15 @@
       </div><br>
       <div style="font-size: 36px; color: #ff0000;">VALOR: <strong>15 MT</strong> 💵</div>
     </div>
-    <button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
-      📹 COMO FAZER O PAGAMENTO - PASSO A PASSO
-    </button>
-    <div id="screenshot-message">
-      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E ENVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
+
+    <!-- Novo botão animado com o texto alterado -->
+    <button class="animated-button" onclick="mostrarTutorial()">⭕ CLICA NO BOTÃO, PARA APRENDER A FAZER O PAGAMENTO PASSO A PASSO ⭕</button>
+    
+    <!-- Texto do tutorial, inicialmente escondido -->
+    <div class="tutorial-content" id="tutorialContent">
+      <p>‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E ENVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️</p>
     </div>
+
     <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
     <table>
       <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
@@ -302,8 +304,9 @@
       <tr><td>🚀 Bink Tunnel VPN</td><td>15 MT</td></tr>
       <tr><td>📡 Aio Tunnel VPN</td><td>15 MT</td></tr>
       <tr><td>🔒 TLS Tunnel</td><td>15 MT</td></tr>
-      <tr><td>🛡️ ESET VPN</td><td>15 MT</td></tr> 
-   </table>
+      <tr><td>🛡️ ESET VPN</td><td>15 MT</td></tr>
+    </table>
+
     <form id="paymentForm">
       <input type="text" id="name" placeholder="✍️ Seu nome" required>
       <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
@@ -334,6 +337,12 @@
       alert("Copiado: " + texto);
     }
 
+    // Função que mostra ou esconde o conteúdo do tutorial
+    function mostrarTutorial() {
+      const tutorialContent = document.getElementById('tutorialContent');
+      tutorialContent.style.display = (tutorialContent.style.display === 'none' || tutorialContent.style.display === '') ? 'block' : 'none';
+    }
+
     document.getElementById("paymentForm").onsubmit = function(event) {
       event.preventDefault();
       let nome = document.getElementById("name").value;
@@ -342,12 +351,3 @@
       let texto = `✅ Pagamento confirmado por ${nome}. WhatsApp do cliente: ${phone}. Solicitou: ${tipo}`;
       let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
       window.open(linkWhatsApp, '_blank');
-    };
-
-    setInterval(() => {
-      const numeroAleatorio = Math.floor(Math.random() * (58 - 18 + 1)) + 18;
-      document.getElementById("online-number").textContent = numeroAleatorio;
-    }, 6000);
-  </script>
-</body>
-</html>
