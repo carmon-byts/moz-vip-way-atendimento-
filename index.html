@@ -241,6 +241,45 @@
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
+
+    /* Alterações solicitadas */
+    .info-mpesa #numero-mpesa, .info-mpesa #nome-mpesa {
+      color: blue;
+    }
+
+    .info-mpesa span, .info-mpesa strong {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #screenshot-message {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff4500;
+      text-transform: uppercase;
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      display: block;
+      width: 90%;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .promo-message {
+      font-size: 36px;
+      font-weight: bold;
+      color: red;
+      margin-top: 20px;
+      text-transform: uppercase;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -250,6 +289,7 @@
       <span id="online-number">38</span> online
     </div>
     <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
+    <div class="promo-message">🔥 PROMOÇÃO ÚNICA 🔥</div>
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
     <div class="welcome-buttons">
       <button onclick="mostrarFormulario()">💬 Ir para Atendimento</button>
@@ -263,7 +303,6 @@
       <p>⚠️ A sua segurança é a minha prioridade ⚠️</p>
     </div>
   </div>
-
   <div class="container" id="pagamento">
     <h2 class="pagemento-title">‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
     <div class="info-mpesa">
@@ -275,10 +314,13 @@
       <button class="copy-button" onclick="copiarTexto('nome-mpesa')">Copiar Nome</button> ❗<br><br>
       VALOR: <strong>15 MT</strong> 💵
     </div>
-
     <button class="tutorial-button" onclick="window.open('https://exemplo.com/tutorial', '_blank')">
       📹 COMO FAZER O PAGAMENTO - PASSO A PASSO
     </button>
+
+    <div id="screenshot-message">
+      ‼️ DEPOIS DE FAZER A TRANSFERÊNCIA, FAZ SCREENSHOT DA MENSAGEM DE TRANSFERÊNCIA E EVIE JUNTO COM OS SEUS DADOS NO BOTÃO DE (SOLICITAR SEU ARQUIVO NO WHATSAPP) PARA SERES AUTENTICADO E RECEBER TEU ARQUIVO DENTRO DE SEGUNDOS ‼️
+    </div>
 
     <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
     <table>
@@ -306,47 +348,4 @@
 
       <input type="text" id="name" placeholder="✍️ Seu nome" required>
       <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
-      <textarea id="feedback" placeholder="📝 Sua opinião (opcional)"></textarea>
-      <input type="file" id="screenshot" accept="image/*"><br>
-
-      <button type="submit" class="submit">📤 Solicitar o seu arquivo no WhatsApp</button>
-    </form>
-    <div class="message" id="statusMessage"></div>
-  </div>
-
-  <script>
-    function mostrarFormulario() {
-      document.getElementById('welcome').style.display = 'none';
-      document.getElementById('pagamento').style.display = 'block';
-    }
-
-    document.getElementById("paymentForm").onsubmit = function(event) {
-      event.preventDefault();
-      let nome = document.getElementById("name").value;
-      let vpn = document.getElementById("vpn").value;
-      let phone = document.getElementById("phone").value;
-      let feedback = document.getElementById("feedback").value;
-      let texto = `✅ Pagamento confirmado por ${nome} para ${vpn}. WhatsApp do cliente: ${phone}. Feedback: ${feedback}`;
-      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
-      document.getElementById("statusMessage").innerText = "⏳ A abrir WhatsApp...";
-      setTimeout(() => {
-        window.open(linkWhatsApp, "_blank");
-      }, 1500);
-    };
-
-    function atualizarNumeroOnline() {
-      const numero = Math.floor(Math.random() * (47 - 24 + 1)) + 24;
-      document.getElementById("online-number").textContent = numero;
-    }
-
-    function copiarTexto(id) {
-      let texto = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(texto);
-      alert("Copiado: " + texto);
-    }
-
-    setInterval(atualizarNumeroOnline, 4000);
-    atualizarNumeroOnline();
-  </script>
-</body>
-</html>
+      <textarea id="feedback"
