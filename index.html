@@ -9,8 +9,66 @@
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
     }
-
+    .welcome-screen {
+      background-image: url('bg-mozvip.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+    }
+    .welcome-screen h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-top: -40px;
+      color: #fff;
+      text-shadow: 1px 1px 4px #000;
+    }
+    .welcome-screen h2 {
+      font-size: 1.8rem;
+      margin: 0 20px 30px;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .welcome-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .welcome-buttons button {
+      padding: 35px 70px;
+      font-size: 28px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .online-counter {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background-color: #222;
+      color: #0f0;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 0 10px #0f0;
+    }
     .container {
+      display: none;
       max-width: 100%;
       height: 100vh;
       margin: 0;
@@ -21,14 +79,12 @@
       text-align: center;
       overflow-y: auto;
     }
-
     .info-mpesa {
       font-size: 16px;
       font-weight: bold;
       margin: 20px 0;
       color: red;
     }
-
     table {
       margin: 20px auto;
       border-collapse: collapse;
@@ -36,32 +92,32 @@
       font-size: 18px;
       animation: zoomIn 1s ease-in-out;
     }
-
     th, td {
       border: 1px solid #ddd;
       padding: 15px;
     }
-
     th {
       background-color: #f0f0f0;
     }
 
-    select, input[type="text"], textarea {
-      width: 95%;
-      padding: 18px;
-      margin: 15px 0;
+    /* CAMPOS AUMENTADOS COM ANIMAÇÃO E CORES */
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    input, textarea, select {
+      width: 98%;
+      padding: 20px;
+      margin: 20px 0;
       border-radius: 10px;
       border: 2px solid #007bff;
       font-size: 20px;
-      animation: fadeInInput 1s ease-in-out;
-      background-color: #eaf3ff;
+      background-color: #fdfdfd;
+      animation: slideIn 0.5s ease forwards;
     }
-
-    @keyframes fadeInInput {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
+    textarea {
+      resize: none;
     }
-
     input[type=file]::file-selector-button {
       background-color: #007bff;
       color: white;
@@ -70,7 +126,6 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     button.submit {
       background-color: #28a745;
       color: white;
@@ -82,13 +137,11 @@
       font-weight: bold;
       margin-top: 10px;
     }
-
     .message {
       margin-top: 20px;
       font-weight: bold;
       color: green;
     }
-
     .tutorial-button {
       font-size: 20px;
       font-weight: bold;
@@ -100,15 +153,46 @@
       cursor: pointer;
       animation: pulse 1.5s infinite;
     }
-
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
+    .links-uteis {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+    .links-uteis h3 {
+      font-size: 24px;
+      color: yellow;
+      margin-bottom: 20px;
+    }
+    .grupo-button, .config-button, .telegram-button {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 12px 25px;
+      border-radius: 10px;
+      margin: 10px 5px;
+      cursor: pointer;
+      border: none;
+    }
+    .links-uteis p {
+      font-size: 20px;
+      font-weight: bold;
+      color: red;
+      margin-top: 25px;
+    }
   </style>
 </head>
 <body>
+  <!-- Conteúdo permanece o mesmo até o formulário -->
 
   <div class="container" id="pagamento">
     <h2>‼️ FAZ O PAGAMENTO VIA E-PESA ‼️</h2>
@@ -141,6 +225,7 @@
       <tr><td>📡 Aio Tunnel VPN</td><td>15 MT</td></tr>
     </table>
 
+    <!-- FORMULÁRIO MODIFICADO -->
     <form id="paymentForm">
       <select id="vpn" required>
         <option value="">📲 Escolha sua VPN</option>
@@ -165,6 +250,11 @@
   </div>
 
   <script>
+    function mostrarFormulario() {
+      document.getElementById('welcome').style.display = 'none';
+      document.getElementById('pagamento').style.display = 'block';
+    }
+
     document.getElementById("paymentForm").onsubmit = function(event) {
       event.preventDefault();
 
@@ -182,6 +272,14 @@
         window.open(linkWhatsApp, "_blank");
       }, 1500);
     };
+
+    function atualizarNumeroOnline() {
+      const numero = Math.floor(Math.random() * (47 - 24 + 1)) + 24;
+      document.getElementById("online-number").textContent = numero;
+    }
+    setInterval(atualizarNumeroOnline, 4000);
+    atualizarNumeroOnline();
   </script>
 </body>
 </html>
+
