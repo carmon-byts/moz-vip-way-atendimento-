@@ -64,20 +64,29 @@
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
-    .welcome-screen h2 {
-      font-size: 2.8rem;
-      color: #ffffff; /* Cor branca */
-      font-weight: bold;
-      margin-top: 400px; /* Ajuste para descer */
-      margin-bottom: 0;
-      text-shadow: 
-       -2px -2px 2px #aaa, 
-        2px 2px 2px #000; /* Efeito 3D chamativo */
-      border-left: 6px solid #ffffff;
-      border-right: 6px solid #ffffff;
-      padding: 15px 25px;
-      border-radius: 10px;
-      background: none; /* Remove fundo branco */
+.welcome-screen h2 {
+  font-size: 3.2rem; /* Letras maiores */
+  color: #00f0ff; /* Azul neon vibrante */
+  font-weight: bold;
+  margin-top: 400px; /* Mantém o texto mais abaixo */
+  margin-bottom: 0;
+  text-shadow:
+    -2px -2px 2px #66ffff,
+     2px 2px 2px #003344; /* Efeito 3D mais forte */
+  border-left: 6px solid #00f0ff;
+  border-right: 6px solid #00f0ff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  background: none;
+
+  /* Animação */
+  animation: pulseEffect 1.8s infinite;
+}
+
+@keyframes pulseEffect {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
     }
 .welcome-buttons {
   display: flex;
