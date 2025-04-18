@@ -31,15 +31,27 @@ GNU nano 8.4                  index.html
       animation: fadeIn 2s ease-in-out;
       position: relative;
     }
-    .welcome-screen h1 {
-      font-size: 4.5rem; /* Menor para caber em telas pequenas */
-      font-weight: bold;
-      margin-bottom: 10px;
-      margin-top: -150px;
-      color: white;
-      text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00f;
-      text-transform: uppercase;
-       letter-spacing: 3px;
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-screen h1 {
+  font-size: 6.5rem; /* Letras maiores */
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 80px; /* Mais para baixo */
+  color: white;
+  text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  animation: slideInTop 1.5s ease-out;
     }
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
