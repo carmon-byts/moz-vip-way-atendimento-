@@ -12,16 +12,15 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 85vh;
-      width: 100vw;
-<title>
-    }
-    .welcome-screen {
-      background-image: url('bg-mozvip.jpg');
-      background-size: cover;
-      background-position: center;
+      background-color: #000;
       height: 100vh;
       width: 100vw;
+    }
+
+    .welcome-screen {
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.4);
       color: white;
       text-align: center;
       display: flex;
@@ -31,16 +30,18 @@
       animation: fadeIn 2s ease-in-out;
       position: relative;
     }
+
     .welcome-screen h1 {
       font-size: 6rem;
       font-weight: bold;
       margin-bottom: 20px;
       margin-top: -40px;
       color: white;
-      text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #0a0;
+      text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #000;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
+
     .assinatura {
       font-size: 1.8rem;
       font-style: italic;
@@ -48,6 +49,7 @@
       text-shadow: 1px 1px 3px #000;
       margin-top: -10px;
       margin-bottom: 10px;
+  </style>
     }
     .promo-banner {
       font-size: 2.5rem;
