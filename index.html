@@ -11,17 +11,16 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        height: auto;
+        height: 95vh;
         width: 100vw;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden;
       }
 
       .welcome-screen {
         background-image: url('bg-mozvip.webp');
         background-size: cover;
         background-position: center;
-        min-height: 100vh;
+        height: 95vh;
         width: 100vw;
         color: white;
         text-align: center;
@@ -307,6 +306,7 @@
         color: green;
       }
 
+      /* ANIMAÇÃO MODIFICADA */
       @keyframes flashRapid {
         0%, 100% { background-color: #ffcc00; color: #000; }
         50% { background-color: #000; color: #ffcc00; }
@@ -348,133 +348,6 @@
         <span id="online-number">0</span> online
       </div>
       <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
-   
-
-    <div class="assinatura">@carmon.oficial</div>
-    <div class="promo-banner">🔥 PROMOÇÃO ÚNICA 🔥</div>
-    <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
-    <div class="welcome-buttons">
-      <button onclick="mostrarFormulario()">💬 IR PARA A LOJA</button>
-      <button onclick="window.location.href='mailto:aldamiguelrafael@gmail.com?subject=Opinião%20sobre%20o%20site%20MOZ%20VIP%20WAY'">✍️ Deixar sua Opinião</button>
     </div>
-    <div class="links-uteis">
-      <h3>🔗 Links Úteis:</h3>
-      <button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">💬 Grupo de WhatsApp</button>
-      <button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">🔒 Configuração Privada</button>
-      <button class="telegram-button" onclick="window.open('https://t.me/MOZVIPWEY', '_blank')">📢 Grupo de Telegram</button>
-      <p>⚠️ <span style="font-size: 34px;">A sua segurança é a minha prioridade</span> ⚠️</p>
-    </div>
-  </div>
-
-  <div class="container" id="pagamento">
-    <h2 class="pagemento-title">📡 PAGAMENTO VIA M-PESA 📡</h2>
-    <div class="info-mpesa">
-      <div>📱 <span id="numero-mpesa">+258 852361783</span>
-        <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
-      </div><br>
-      <div style="font-size: 32px; color: #000;">CONFIRME O NOME ANTES DE ENVIAR</div>
-      <div>NOME: <span id="nome-mpesa" style="color: #28a745;">CARMÓNIO</span>
-        <button class="copy-button" onclick="copiarTexto('nome-mpesa')">Copiar Nome</button> ❗
-      </div><br>
-      <div style="font-size: 36px; color: #ff0000;">VALOR: <strong>15 MT</strong> 💵</div>
-    </div>
-    <button class="tutorial-button" onclick="window.location.href='tutorial-pagamento.html'">
-      📹 APRENDA COMO FAZER O PAGAMENTO PASSO A PASSO
-    </button>
-    <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
-    <table>
-      <tr>
-        <th>🛡️ VPN</th>
-        <th>💸 Preço</th>
-      </tr>
-      <tr>
-        <td>🔐 Http Custom</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>⚙️ Http Injector Lite</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🛰️ Http Injector</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🔌 Linklayer VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🌐 Wry VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🚀 Bink Tunnel VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>📡 Aio Tunnel VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🔒 TLS Tunnel VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🛡️ ESET VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-    </table>
-    <form id="paymentForm">
-      <input type="text" id="name" placeholder="✍️ Seu nome" required>
-      <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
-      <select id="vpnType" required>
-        <option value="" disabled selected>📂 Selecione o tipo de VPN</option>
-        <option>Http Custom</option>
-        <option>Http Injector Lite</option>
-        <option>TLS Tunnel VPN</option>
-        <option>Linklayer VPN</option>
-        <option>Http Injector</option>
-        <option>ESET VPN</option>
-        <option>Http Injector</option>
-        <option>Linklayer VPN</option>
-        <option>Wry VPN</option>
-        <option>Bink Tunnel VPN</option>
-        <option>Aio Tunnel VPN</option>
-      </select>
-      <button type="submit" class="submit">📤 SOLICITAR O SEU ARQUIVO NO WATSAPP</button>
-    </form>
-    <div class="message" id="statusMessage"></div>
-  </div>
-
-  <script>
-    function mostrarFormulario() {
-      document.getElementById('welcome').style.display = 'none';
-      document.getElementById('pagamento').style.display = 'block';
-    }
-
-    function copiarTexto(id) {
-      const texto = document.getElementById(id).textContent;
-      navigator.clipboard.writeText(texto);
-      alert("Copiado: " + texto);
-    }
-
-    document.getElementById("paymentForm").onsubmit = function(event) {
-      event.preventDefault();
-      let nome = document.getElementById("name").value;
-      let phone = document.getElementById("phone").value;
-      let tipo = document.getElementById("vpnType").value;
-      let texto = `✅ Pagamento confirmado por ${nome}. WhatsApp do cliente: ${phone}. Solicitou: ${tipo}`;
-      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
-      window.open(linkWhatsApp, '_blank');
-    };
-
-    setInterval(() => {
-      const numeroAleatorio = Math.floor(Math.random() * (58 - 4 + 1)) + 18;
-      document.getElementById("online-number").textContent = numeroAleatorio;
-    }, 6000);
-  </script>
-
-</body>
-
+  </body>
 </html>
