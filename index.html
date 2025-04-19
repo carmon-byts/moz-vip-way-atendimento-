@@ -80,28 +80,26 @@
         will-change: transform;
         transform: none !important;
       }
-
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-      }
-
-      .welcome-screen h2 {
-        font-size: 3.2rem;
-        color: #00f0ff;
-        font-weight: bold;
-        margin-top: 400px;
-        margin-bottom: 0;
-        text-shadow: -2px -2px 2px #66ffff, 2px 2px 2px #003344;
-        border-left: 6px solid #00f0ff;
-        border-right: 6px solid #00f0ff;
-        padding: 15px 25px;
-        border-radius: 10px;
-        background: none;
-        animation: pulseEffect 1.8s infinite;
-        will-change: transform;
-        transform: none !important;
+@keyframes deslizarSuave {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+.welcome-screen h2 {
+  font-size: 3.2rem;
+  color: #00f0ff;
+  font-weight: bold;
+  margin-top: 400px;
+  margin-bottom: 0;
+  text-shadow: -2px -2px 2px #66ffff, 2px 2px 2px #003344;
+  border-left: 6px solid #00f0ff;
+  border-right: 6px solid #00f0ff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  background: none;
+  animation: deslizarSuave 3s ease-in-out infinite;
+  will-change: transform;
+  transform: none !important;
       }
 
       @keyframes pulseEffect {
