@@ -2,117 +2,98 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
+  <title>MOZ VIP WAY</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      image-rendering: auto;
-      height: 95vh;
-      width: 100vw;
     }
 
-    .welcome-screen {
-      background-image: url('bg-mozvip.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      image-rendering: auto;
-      height: 95vh;
-      width: 100vw;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+    .container {
+      padding: 20px;
+      display: none;
     }
 
-    .welcome-screen h1 {
-      font-size: 6rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      margin-top: -200px;
-      color: white;
-      text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      animation: glowText 3s ease-in-out infinite;
-    }
-
-    @keyframes glowText {
-      0% { text-shadow: 0 0 5px #fff, 0 0 10px #00aaff, 0 0 15px #00aaff; }
-      50% { text-shadow: 0 0 20px #00ffff, 0 0 30px #00aaff, 0 0 40px #00aaff; }
-      100% { text-shadow: 0 0 5px #fff, 0 0 10px #00aaff, 0 0 15px #00aaff; }
+    .welcome-buttons button,
+    .links-uteis button,
+    .copy-button,
+    .submit,
+    .grupo-button,
+    .config-button,
+    .telegram-button,
+    .tutorial-button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
     }
 
     .tutorial-button {
-      font-size: 36px; /* Aumentado de 28px para 36px */
-      font-weight: bold;
-      background-color: #ffcc00;
+      font-size: 24px;
+      padding: 16px 32px;
+      background-color: #ffc107;
       color: #000;
-      border: none;
-      padding: 30px 60px; /* Aumentado o padding */
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 20px;
-      animation: blinkStrong 1s infinite;
-    }
-
-    @keyframes blinkStrong {
-      0%, 100% {
-        background-color: #ffcc00;
-        color: black;
-        box-shadow: 0 0 20px 5px #ffcc00;
-      }
-      50% {
-        background-color: #fff700;
-        color: red;
-        box-shadow: 0 0 30px 10px #ff0000;
-      }
-    }
-
-    .online-counter {
-      position: fixed;
-      top: 10px;
-      right: 15px;
-      background-color: #222;
-      color: #0f0;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 14px;
       font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 0 10px #0f0;
-      min-width: 100px;
-      justify-content: center;
-      text-align: center;
-      height: 35px;
-      z-index: 999;
+      animation: piscar 1s infinite;
+    }
+
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    #paymentForm input, #paymentForm select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 18px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .submit {
+      background-color: #28a745;
+      color: white;
+      font-size: 20px;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+
+    /* AUMENTO DO TEXTO E COR DIFERENTE NO TUTORIAL DE PAGAMENTO */
+    #pagamento {
+      font-size: 22px;
+      color: #333366;
+    }
+
+    #pagamento h2,
+    #pagamento h3,
+    #pagamento div,
+    #pagamento table,
+    #pagamento form {
+      color: #333366;
     }
   </style>
 </head>
 <body>
-  <div class="welcome-screen" id="welcome">
-    <div class="online-counter">
-      <span>🟢</span>
-      <span id="online-number">0</span> online
-    </div>
-    <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
-    <button class="tutorial-button">Tutorial de Pagamento</button>
-  </div>
 
+  <div class="container" id="welcome" style="display: block;">
     <div class="assinatura">@carmon.oficial</div>
     <div class="promo-banner">🔥 PROMOÇÃO ÚNICA 🔥</div>
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
@@ -150,43 +131,15 @@
         <th>🛡️ VPN</th>
         <th>💸 Preço</th>
       </tr>
-      <tr>
-        <td>🔐 Http Custom</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>⚙️ Http Injector Lite</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🛰️ Http Injector</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🔌 Linklayer VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🌐 Wry VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🚀 Bink Tunnel VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>📡 Aio Tunnel VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🔒 TLS Tunnel VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
-        <td>🛡️ ESET VPN</td>
-        <td>15 MT</td>
-      </tr>
-      <tr>
+      <tr><td>🔐 Http Custom</td><td>15 MT</td></tr>
+      <tr><td>⚙️ Http Injector Lite</td><td>15 MT</td></tr>
+      <tr><td>🛰️ Http Injector</td><td>15 MT</td></tr>
+      <tr><td>🔌 Linklayer VPN</td><td>15 MT</td></tr>
+      <tr><td>🌐 Wry VPN</td><td>15 MT</td></tr>
+      <tr><td>🚀 Bink Tunnel VPN</td><td>15 MT</td></tr>
+      <tr><td>📡 Aio Tunnel VPN</td><td>15 MT</td></tr>
+      <tr><td>🔒 TLS Tunnel VPN</td><td>15 MT</td></tr>
+      <tr><td>🛡️ ESET VPN</td><td>15 MT</td></tr>
     </table>
     <form id="paymentForm">
       <input type="text" id="name" placeholder="✍️ Seu nome" required>
@@ -234,10 +187,9 @@
 
     setInterval(() => {
       const numeroAleatorio = Math.floor(Math.random() * (58 - 4 + 1)) + 18;
-      document.getElementById("online-number").textContent = numeroAleatorio;
+      document.getElementById("online-number")?.textContent = numeroAleatorio;
     }, 6000);
   </script>
 
 </body>
-
 </html>
