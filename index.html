@@ -13,7 +13,7 @@
         background-repeat: no-repeat;
         height: 95vh;
         width: 100vw;
-        overflow: hidden;
+        overflow-y: auto; /* Alterado aqui */
       }
 
       .welcome-screen {
@@ -54,6 +54,21 @@
         transform: none !important;
       }
 
+      @keyframes textoDeslizando {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+
+      .frase-bemvindo {
+        font-size: 2.5rem;
+        color: #ffff00;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px #000;
+        animation: textoDeslizando 3s ease-in-out infinite;
+        margin-top: 40px;
+      }
+
       @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
       .assinatura {
@@ -80,26 +95,28 @@
         will-change: transform;
         transform: none !important;
       }
-@keyframes deslizarSuave {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-.welcome-screen h2 {
-  font-size: 3.2rem;
-  color: #00f0ff;
-  font-weight: bold;
-  margin-top: 400px;
-  margin-bottom: 0;
-  text-shadow: -2px -2px 2px #66ffff, 2px 2px 2px #003344;
-  border-left: 6px solid #00f0ff;
-  border-right: 6px solid #00f0ff;
-  padding: 15px 25px;
-  border-radius: 10px;
-  background: none;
-  animation: deslizarSuave 3s ease-in-out infinite;
-  will-change: transform;
-  transform: none !important;
+
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      .welcome-screen h2 {
+        font-size: 3.2rem;
+        color: #00f0ff;
+        font-weight: bold;
+        margin-top: 400px;
+        margin-bottom: 0;
+        text-shadow: -2px -2px 2px #66ffff, 2px 2px 2px #003344;
+        border-left: 6px solid #00f0ff;
+        border-right: 6px solid #00f0ff;
+        padding: 15px 25px;
+        border-radius: 10px;
+        background: none;
+        animation: pulseEffect 1.8s infinite;
+        will-change: transform;
+        transform: none !important;
       }
 
       @keyframes pulseEffect {
@@ -304,7 +321,6 @@
         color: green;
       }
 
-      /* ANIMAÇÃO MODIFICADA */
       @keyframes flashRapid {
         0%, 100% { background-color: #ffcc00; color: #000; }
         50% { background-color: #000; color: #ffcc00; }
@@ -346,6 +362,7 @@
         <span id="online-number">0</span> online
       </div>
       <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
+      <div class="frase-bemvindo">BEM VINDO/A NO SITE DE VENDA DE ARQUIVO PARA VPN'S</div>
     
 
     <div class="assinatura">@carmon.oficial</div>
