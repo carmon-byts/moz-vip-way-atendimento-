@@ -1,32 +1,6 @@
 <!DOCTYPE html><html lang="pt">  <head>  
   <meta charset="UTF-8">  
   <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
-}
-.titulo-animado {
-  font-size: 6rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  margin-top: -200px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
-  animation: brilhoMovimento 3s ease-in-out infinite;
-}
-
-@keyframes brilhoMovimento {
-  0% {
-    transform: translateY(0);
-    text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
-  }
-  50% {
-    transform: translateY(-10px);
-    text-shadow: 4px 4px 25px #00ffff, -4px -4px 25px #00ccff, 0 0 50px #00ccff;
-  }
-  100% {
-    transform: translateY(0);
-    text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
-  }  
   <style>  
     body {  
       margin: 0;  
@@ -64,6 +38,22 @@
   text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
   text-transform: uppercase;
   letter-spacing: 4px;
+  animation: glowMove 3s ease-in-out infinite;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translateY(0);
+    text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
+  }
+  50% {
+    transform: translateY(-15px);
+    text-shadow: 4px 4px 30px #00ffff, -4px -4px 30px #00ccff, 0 0 60px #00ccff;
+  }
+  100% {
+    transform: translateY(0);
+    text-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, 0 0 20px #00aaff;
+
     }
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .assinatura {
